@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         counterView = findViewById(R.id.CounterView)
+        counterView.text = "0"
     }
 
     fun ClickButtonUpdate (view: View){
