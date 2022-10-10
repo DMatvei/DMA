@@ -4,25 +4,38 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import kotlin.random.Random
+import android.content.Intent as Intent
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var counterView: TextView
 
+    var countClick: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         counterView = findViewById(R.id.CounterView)
-        counterView.text = "0"
+        countClick = 0
+        counterView.text = countClick.toString()
     }
 
-    fun ClickButtonUpdate (view: View){
-        val countString = counterView.text.toString()
+    fun clickButtonUpdate (view: View){
 
-        var count: Int = Integer.parseInt(countString)
-        count++
 
-        counterView.text = count.toString()
+        countClick++
+
+        counterView.text = countClick.toString()
+    }
+
+    fun clickNextButton (view: View){
+
+        val intent = Intent(this@MainActivity, SecondActivity2::class.java)
+        intent.putExtra("count", countClick)
+        startActivity(intent)
+
+
     }
 }
 
