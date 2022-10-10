@@ -46,7 +46,7 @@ class SecondActivity2 : AppCompatActivity() {
 
         val intent = Intent(this@SecondActivity2, MainActivity::class.java)
         startActivity(intent)
-
+        onDestroy()
 
     }
 }
