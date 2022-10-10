@@ -28,7 +28,7 @@ class SecondActivity2 : AppCompatActivity() {
         setContentView(binding.root)
         randomNumView = findViewById(R.id.RandomNumView)
         val countClick: Int = intent.getIntExtra("count",0 )
-        randomNumView.text = Random.nextInt(countClick).toString()
+        randomNumView.text = Random.nextInt(countClick + 1).toString()
 
 
 
@@ -46,7 +46,6 @@ class SecondActivity2 : AppCompatActivity() {
 
         val intent = Intent(this@SecondActivity2, MainActivity::class.java)
         startActivity(intent)
-        onDestroy()
 
     }
 }
